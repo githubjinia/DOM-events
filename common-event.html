@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="clicking-method"></p>
+    <input id="name-feild" type="text">
+    <button id="update-name">Update</button>
+    <button onclick="functionClick()">Click here for document</button>
+    <button id="handle-event">Click for change the document</button>
+
+    <script>
+        // method by function
+        function functionClick() {
+            const p = document.getElementById('clicking-method');
+            p.innerText = 'Here is your document';
+        }
+
+        // method by direct function
+
+        document.getElementById('handle-event').addEventListener('click', function () {
+
+            const p = document.getElementById('clicking-method');
+            p.innerText = 'The document chnanged by new document';
+        })
+
+        //direct for input
+        document.getElementById('update-name').addEventListener('click', function () {
+            const nameFeild = document.getElementById('name-feild');
+
+            const p = document.getElementById('clicking-method');
+            p.innerText = nameFeild.value;
+            nameFeild.value = '';
+        })
+    </script>
+</body>
+
+</html>
